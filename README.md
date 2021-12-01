@@ -1,2 +1,3 @@
-# cjk-glyphs-diff
-CJK Glyphs Diff
+# CJK Glyphs Diff
+
+**WORK IN PROGRESS...**
