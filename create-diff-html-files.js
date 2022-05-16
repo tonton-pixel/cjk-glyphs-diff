@@ -258,18 +258,24 @@ let htmlText =
             text-align: center;
             padding: 0.5em;
         }
-        table td div.code-point
+        table td div.character
+        {
+            font-family: serif;
+            font-size: 48px;
+            line-height: 64px;
+            width: 96px;
+        }
+        table td span.code-point
         {
             font-family: monospace;
-            font-size: 18px;
-            width: 96px;
+            font-size: 16px;
             line-height: 1em;
-            padding: 3px 0 2px 0;
+            padding: 3px 6px 2px 6px;
             border: 1px solid hsl(31, 5%, 88%);
             border-radius: 2px;
             background-color: hsl(31, 5%, 96%);
         }
-        table td div.code-point.compatibility
+        table td span.code-point.compatibility
         {
             font-style: italic;
         }
@@ -324,13 +330,13 @@ for (let prefix in sources)
     {
         removedHtmlStrings.push (`<h3 id="removed">Removed glyphs in Unicode 14.0:&nbsp;&nbsp;${removedIDs.length}</h3>`);
         removedHtmlStrings.push (`<table>`);
-        removedHtmlStrings.push (`<tr><th>Code Point</th><th>Unicode 13.0</th><th>Unicode 14.0</th></tr>`);
+        removedHtmlStrings.push (`<tr><th>Character</th><th>Unicode 13.0</th><th>Unicode 14.0</th></tr>`);
         for (let removedID of removedIDs)
         {
             let [ character ] = removedID;
             let codePoint = `U+${character.codePointAt (0).toString (16).toUpperCase ()}`;
             let compatibility = isCompatibility (character) ? " compatibility" : "";
-            removedHtmlStrings.push (`<tr><td><div class="code-point${compatibility}">${codePoint}</div></td><td><span class="glyph">${getSVG (removedID, pages13, 'svg-glyphs-13.0')}</span><br><div class="source${compatibility}">${IDs13[removedID]}</div></td><td class="empty"></td></tr>`);
+            removedHtmlStrings.push (`<tr><td><div class="character">${character}</div><span class="code-point${compatibility}">${codePoint}</span></td><td><span class="glyph">${getSVG (removedID, pages13, 'svg-glyphs-13.0')}</span><br><div class="source${compatibility}">${IDs13[removedID]}</div></td><td class="empty"></td></tr>`);
         }
         removedHtmlStrings.push (`</table>`);
     }
@@ -342,13 +348,13 @@ for (let prefix in sources)
     {
         addedHtmlStrings.push (`<h3 id="added">Added glyphs in Unicode 14.0:&nbsp;&nbsp;${addedIDs.length}</h3>`);
         addedHtmlStrings.push (`<table>`);
-        addedHtmlStrings.push (`<tr><th>Code Point</th><th>Unicode 13.0</th><th>Unicode 14.0</th></tr>`);
+        addedHtmlStrings.push (`<tr><th>Character</th><th>Unicode 13.0</th><th>Unicode 14.0</th></tr>`);
         for (let addedID of addedIDs)
         {
             let [ character ] = addedID;
             let codePoint = `U+${character.codePointAt (0).toString (16).toUpperCase ()}`;
             let compatibility = isCompatibility (character) ? " compatibility" : "";
-            addedHtmlStrings.push (`<tr><td><div class="code-point${compatibility}">${codePoint}</div></td><td class="empty"></td><td><span class="glyph">${getSVG (addedID, pages14, 'svg-glyphs-14.0')}</span><br><div class="source${compatibility}">${IDs14[addedID]}</div></td></tr>`);
+            addedHtmlStrings.push (`<tr><td><div class="character">${character}</div><span class="code-point${compatibility}">${codePoint}</span></td><td class="empty"></td><td><span class="glyph">${getSVG (addedID, pages14, 'svg-glyphs-14.0')}</span><br><div class="source${compatibility}">${IDs14[addedID]}</div></td></tr>`);
         }
         addedHtmlStrings.push (`</table>`);
     }
@@ -360,7 +366,7 @@ for (let prefix in sources)
     if (commonIDs.length > 0)
     {
         changedHtmlStrings.push (`<table>`);
-        changedHtmlStrings.push (`<tr><th>Code Point</th><th>Unicode 13.0</th><th>Unicode 14.0</th></tr>`);
+        changedHtmlStrings.push (`<tr><th>Character</th><th>Unicode 13.0</th><th>Unicode 14.0</th></tr>`);
         for (let commonID of commonIDs)
         {
             let svg13 = getSVG (commonID, pages13, 'svg-glyphs-13.0');
@@ -371,7 +377,7 @@ for (let prefix in sources)
                 let [ character ] = commonID;
                 let codePoint = `U+${character.codePointAt (0).toString (16).toUpperCase ()}`;
                 let compatibility = isCompatibility (character) ? " compatibility" : "";
-                changedHtmlStrings.push (`<tr><td><div class="code-point${compatibility}">${codePoint}</div></td><td><span class="glyph">${svg13}</span><br><div class="source${compatibility}">${IDs13[commonID]}</div></td><td><span class="glyph">${svg14}</span><br><div class="source${compatibility}">${IDs14[commonID]}</div></td></tr>`);
+                changedHtmlStrings.push (`<tr><td><div class="character">${character}</div><span class="code-point${compatibility}">${codePoint}</span></td><td><span class="glyph">${svg13}</span><br><div class="source${compatibility}">${IDs13[commonID]}</div></td><td><span class="glyph">${svg14}</span><br><div class="source${compatibility}">${IDs14[commonID]}</div></td></tr>`);
             }
         }
         changedHtmlStrings.push (`</table>`);
@@ -384,7 +390,7 @@ for (let prefix in sources)
     //
     if ((removedIDs.length + addedIDs.length + changedIDs.length) > 0)
     {
-        fs.writeFileSync (path.join (__dirname, `CJK ${prefix}-source glyphs diff.html`), htmlText.replace (/\{\{prefix\}\}/g, prefix).replace (/\{\{diff\}\}/g, removedHtmlStrings.join ("") + addedHtmlStrings.join ("") + changedHtmlStrings.join ("")));
+        fs.writeFileSync (path.join (__dirname, `CJK-${prefix}-source-glyphs-diff.html`), htmlText.replace (/\{\{prefix\}\}/g, prefix).replace (/\{\{diff\}\}/g, removedHtmlStrings.join ("") + addedHtmlStrings.join ("") + changedHtmlStrings.join ("")));
     }
 }
 //
