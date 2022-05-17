@@ -12,7 +12,9 @@ List of CJK glyphs differences between Unicode 13.0 and 14.0.
     - `CJK-UTC-source-glyphs-diff.html`
     - `CJK-V-source-glyphs-diff.html`
 
-- For each source are listed the following differences, if any:
+- Pre-generated HTML files are available for download from the [latest release](https://github.com/tonton-pixel/cjk-glyphs-diff/releases/latest).
+
+- For each CJk source are listed the following differences, if any:
 
     - Removed glyphs
     - Added glyphs
