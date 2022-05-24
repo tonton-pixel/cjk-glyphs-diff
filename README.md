@@ -4,7 +4,7 @@ List of CJK glyphs differences between Unicode 13.0 and 14.0.
 
 - Running the sample script `Create CJK Glyphs Diff HTML Files` from the `JavaScript Runner` utility of the latest version of the [Unicopedia Sinica](https://github.com/tonton-pixel/unicopedia-sinica) application generates the following HTML files on the `Desktop` folder:
 
-    - `CJK-G-source-glyphs-13.0-14.0-diff`
+    - `CJK-G-source-glyphs-13.0-14.0-diff.html`
     - `CJK-K-source-glyphs-13.0-14.0-diff.html`
     - `CJK-M-source-glyphs-13.0-14.0-diff.html`
     - `CJK-T-source-glyphs-13.0-14.0-diff.html`
