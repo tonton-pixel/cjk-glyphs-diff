@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>CJK K-source glyphs diff between Unicode 13.0 and 14.0</title>
+        <style>
+            body
+            {
+                font-family: sans-serif;
+                margin-left: 2em;
+            }
+            nav
+            {
+                font-weight: normal;
+            }
+            table
+            {
+                border-collapse: collapse;
+                border: 1px solid gray;
+                margin-bottom: 2em;
+            }
+            table tr
+            {
+                border: 1px solid gray;
+            }
+            table th,
+            table td
+            {
+                border: 1px solid gray;
+                text-align: center;
+                padding: 0.5em;
+            }
+            table td div.character
+            {
+                font-family: serif;
+                font-size: 48px;
+                line-height: 64px;
+                width: 96px;
+            }
+            table td span.code-point
+            {
+                font-family: monospace;
+                font-size: 16px;
+                line-height: 1em;
+                padding: 3px 6px 2px 6px;
+                border: 1px solid hsl(31, 5%, 88%);
+                border-radius: 2px;
+                background-color: hsl(31, 5%, 96%);
+            }
+            table td span.code-point.compatibility
+            {
+                font-style: italic;
+            }
+            table td span.glyph.hidden
+            {
+                display: none;
+            }
+            table td span.glyph svg
+            {
+                width: 96px;
+                height: 96px;
+            }
+            table td div.source
+            {
+                font-size: 13px;
+            }
+            table td div.source.compatibility
+            {
+                font-style: italic;
+            }
+            table th a,
+            table td a
+            {
+                font-size: smaller;
+                font-weight: normal;
+            }
+            table td.empty
+            {
+                user-select: none;
+                cursor: default;
+                background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><g fill="hsl(0, 0%, 96%)"><polygon points="0,1 0,2 2,0 1,0" /><polygon points="1,2 2,2 2,1" /></g></svg>');
+                background-size: 8px;
+                background-position: center;
+                color: var(--color-dimmed);
+            }
+        </style>
+    </head>
+    <body>
+        <h2>CJK K-source glyphs diff between Unicode 13.0 and 14.0</h2>
+        <nav>
+            <a href="#removed">Removed glyphs</a>&nbsp;&nbsp;<a href="#added">Added glyphs</a>&nbsp;&nbsp;<a href="#changed">Changed glyphs</a>
+        </nav>
+        <h3 id="added">Added glyphs in Unicode 14.0:&nbsp;&nbsp;6</h3><table><tr><th>Character</th><th>Unicode 13.0</th><th>Unicode 14.0</th></tr><tr><td><div class="character">媴</div><span class="code-point">U+5AB4</span></td><td class="empty"></td><td><span class="glyph"><svg viewBox="0 0 1000 1000"><path transform="matrix(1 0 0 -1 55 947)" d="m534 112 174 54c-23 39-41 72-52 100-10 28-22 67-34 118h-11c-26-36-52-68-77-96V112m-51 294h256v154H483V406m251 176 32 24h15l48-40v-13l-24-16V378l-7-12-48-15-11 3v30h-93c18-50 40-96 67-138 36 39 72 80 105 123l62-60-7-11-28 5-118-77c29-38 54-66 74-85 21-19 51-41 90-65l-3-13c-26-3-49-16-70-39-34 34-67 74-99 121L487 31l-4-27-14-4-51 77 55 17v134c-43-41-94-77-154-108l-7 12c46 33 85 68 118 105 32 37 67 86 104 147h-51v-15l-7-10-50-14-8 8v253l65-24h251m-372 86h217v103H412v22h167v101l94-18v-13l-29-19v-51h100l38 41h15l51-48v-15H644V668h131l43 47h14l56-53v-16H362v22m-208-7L91 338c12-4 26-9 41-15 9-3 25-9 47-18 18 52 32 103 41 151 9 49 19 117 27 205h-93M0 661v21h98l41 206 89-29-2-14-34-9-33-154h86l32 34h13l56-55-5-15-27-10c-14-95-26-164-37-207-9-44-25-93-46-149 55-27 82-58 82-92 0-26-6-39-20-39-7 0-19 11-37 33s-34 38-48 48c-33-51-62-91-87-121C96 81 60 49 15 14L4 27c40 43 71 80 93 114 22 33 44 75 66 126-25 19-51 36-78 49l-12-43-9-8-49-4-9 9c30 112 59 243 88 391H0Z"/></svg></span><br><div class="source">K6-0004</div></td></tr><tr><td><div class="character">琟</div><span class="code-point">U+741F</span></td><td class="empty"></td><td><span class="glyph"><svg viewBox="0 0 1000 1000"><path transform="matrix(1 0 0 -1 44 949)" d="M637 679h137l33 50h16l57-58v-15H666V486h80l36 50h14l59-57v-14H666V297h77l36 51 14-1 60-55v-18H666V107h135l39 53h14l57-59V85H473l-1-55-5-14-46-16-11 7v577c-24-34-48-64-73-90l-13 9c63 109 114 241 154 394l95-42-5-15h-32c-17-38-41-89-69-154l8-7h134l74 211 90-46-5-14-33-4-98-147m-446 70V457h40l34 48h16l52-52v-19H191V169l158 45 5-14L60 63l-2-33-13-4-45 89 129 36v283H10v23h119v292H2v22h242l43 49h15l52-54v-17H191m282-642h131v167H473V107m0 190h131v168H473V297m0 189h131v170H473V486Z"/></svg></span><br><div class="source">K6-0005</div></td></tr><tr><td><div class="character">璤</div><span class="code-point">U+74A4</span></td><td class="empty"></td><td><span class="glyph"><svg viewBox="0 0 1000 1000"><path transform="matrix(1 0 0 -1 51 947)" d="m527 264 7 12c52-10 87-21 106-33s28-29 28-53c0-11-3-22-9-31-6-8-13-13-22-13-7-1-13 1-18 6-4 6-13 23-26 50-11 22-32 43-66 62m225-37 6 9c86-50 132-94 138-133 2-12 0-23-5-32-6-9-13-14-22-14s-17 6-25 17-21 37-38 77c-11 24-29 50-54 76m-309 30 96-20v-16l-31-11V107c0-20 2-33 7-39 5-5 17-8 36-8h88c32 0 53 16 61 47l28 100 13-3-8-139 25-13V37c-16-14-33-23-50-27-12-3-32-5-58-5H540c-36 0-62 4-76 13-14 7-21 21-21 42v197m-101-32h17c-1-14-3-32-5-53-3-48-13-88-29-121-15-34-32-51-49-51-9 0-17 4-23 12s-9 17-9 28c0 14 4 25 13 33 34 30 55 52 64 69s16 44 21 83m219 351H455v-85h106v85m191 0H625v-85h127v85m0 100H625v-78h127v78m-191 0H455v-78h106v78m182 21 33 38h14l56-44v-14l-30-26V460l-7-9-49-13-8 3v28H625v-98l127 10c-14 12-32 26-54 43l10 11 12-5c26-11 51-22 74-35 47-26 71-55 71-86 0-21-9-33-26-36-7-1-14 1-20 7-6 7-17 23-34 50-3 7-12 18-25 32l-388-67-3-28-17-5-29 88 238 17v102H455v-31l-7-10-53-4-3 4v296l56-26h113v73H340v23h221v101l100-17v-16l-36-13v-55h165l40 52h16l52-56v-19H625v-73l118-1m-524 97 38 38h14l50-43v-17H175V518h30l38 40h12l49-46v-17H175l1-249 136 33 2-13L54 154l-2-27-11-4-41 87 111 22v263H21v23h90v253H6v23h213Z"/></svg></span><br><div class="source">K6-0006</div></td></tr><tr><td><div class="character">璸</div><span class="code-point">U+74B8</span></td><td class="empty"></td><td><span class="glyph"><svg viewBox="0 0 1000 1000"><path transform="matrix(1 0 0 -1 42 951)" d="M110 788H6v22h224l36 43h14l49-49v-16H172V518h34l31 40h14l43-45v-18H172V230l129 42 5-16L58 132l-2-29-16-7-40 80 110 37v282H18v23h92v270m346-589h323v72H456v-72m0 94h323v78H456v-78m0 101h323v81H456v-81m28-236 70-54-6-12-36 2c-47-27-88-46-121-58-34-12-82-23-143-34l-6 13c55 18 99 37 134 58 34 20 71 49 108 85m176-28 6 14c96-21 160-39 192-54s48-34 48-57c0-22-8-33-24-33-7 0-15 5-27 16-33 30-63 53-87 68-25 14-61 30-108 46m152 392 55-41v-13l-27-23V163l-7-12-44-12-11 6v31H456c1-3 1-8 1-13v-15l-11-14-43-11-10 6 1 309c-21-4-32-6-34-6l-32-5-33-4c-20-2-39-5-60-10l-6 17c45 8 91 20 138 36l27 9-1 45 51-24c33 10 76 27 128 52v137H390v22h338l36 44h14l50-51 1-15H637V570c65 33 117 63 153 90l56-62-10-11-36 9c-88-42-164-75-229-99h199l26 25h16M447 670l70-39-8-14-30-2c-46-37-101-67-165-92l-9 14c63 40 111 84 142 133m126 130v102l100-20v-12l-36-16v-54h188l22 29h18l50-54-3-12-31-4-47-49-13 7 11 60H378c0-39-3-70-9-90-3-13-10-25-20-38-10-11-18-17-25-17-19 0-28 19-28 56 0 11 4 21 13 30 15 15 24 29 28 42s10 42 16 87h17c1-9 4-24 8-47h195Z"/></svg></span><br><div class="source">K6-0007</div></td></tr><tr><td><div class="character">砇</div><span class="code-point">U+7807</span></td><td class="empty"></td><td><span class="glyph"><svg viewBox="0 0 1000 1000"><path transform="matrix(1 0 0 -1 57 933)" d="M268 181v315H139V181h129m423 502H427c15-78 33-145 55-202 23-56 53-113 91-173 36 64 61 120 75 168 15 48 30 117 43 207m-295 72H212c-16-94-36-173-61-236h108l29 30h14l54-39v-13l-26-24V135l-5-11-51-12-6 7v39H139V95l-6-13-47-8-12 4v318c-10-11-25-27-45-46l-17-19-12 8c46 72 78 134 97 186s36 129 52 230H24v23h272l37 41h14l49-48v-16m158-50v160l99-22v-12l-36-15V705h150l42 55h11l65-65v-12H765c-21-103-41-180-61-234-19-53-52-115-99-186 51-54 97-96 139-126s90-54 142-71l-6-17c-3 0-7 1-11 1-27 0-48-12-64-36-90 58-167 128-231 209-49-62-97-107-144-138-47-30-115-58-204-85l-7 14c81 34 143 67 186 100 44 33 90 83 138 149-38 64-68 130-91 196-23 67-39 142-50 224H290v22h264Z"/></svg></span><br><div class="source">K6-0008</div></td></tr><tr><td><div class="character">穦</div><span class="code-point">U+7A66</span></td><td class="empty"></td><td><span class="glyph"><svg viewBox="0 0 1000 1000"><path transform="matrix(1 0 0 -1 54 947)" d="M447 181h303v76H447v-76m0 98h303v78H447v-78m0 101h303v84H508l-61-13v-71m62-231 72-56-12-10-35 5C442 53 345 26 242 6l-7 13c118 37 209 80 274 130m140-21 6 15c16-4 34-9 55-13 51-11 87-21 107-30 48-19 72-44 72-75 0-17-9-25-26-25-13 0-32 11-55 32-32 28-57 47-75 57-17 10-45 23-84 39M434 655l66-52-8-11-29 5c-60-41-120-74-180-99l-11 11c65 41 119 90 162 146m355-142 59-42v-16l-35-28V150l-7-11-46-14-10 3v31H446v-29l-4-8-48-12-6 7-1 318c-15-2-40-6-74-10l-5 14c23 6 49 15 77 27l-5 45 68-25c30 11 61 25 95 42v147H400v22h279l32 39h14l43-49-1-12H606V553c52 27 102 59 151 95l62-64-11-10-37 5c-54-36-118-67-190-93h168l27 27h13M570 784v110l100-22v-12l-36-15v-61h156l39 32h16l48-58-3-14-35-11-57-67-11 5 22 91H392c0-9 1-19 1-30 0-35-6-65-17-89-10-24-24-36-41-36s-25 13-25 39c0 13 8 35 26 64 13 21 21 37 24 50 4 13 7 33 8 60l14 3c4-10 7-23 9-39h179M119 634v148c-40-7-73-12-100-14l-2 17c89 24 166 59 231 106l49-79-13-6-22 13c-7-2-22-7-47-15l-31-9V634h28l31 37h15l48-46v-14H184V500c67-53 100-98 100-137 0-13-3-26-10-37-5-10-13-16-22-16-12-1-20 9-24 31-14 62-29 108-44 138l-1-443-6-12-49-14-9 10v404C90 355 54 288 9 224l-9 9c51 107 85 233 102 378H5v23h114Z"/></svg></span><br><div class="source">K6-0009</div></td></tr></table><hr><div>offscreen canvas: 128x128,&nbsp;&nbsp;pixelmatch threshold: 0.5,&nbsp;&nbsp;number of diff pixels threshold: 32.</div>
+        <script>
+            let currentDiffElement = null;
+            function showDiff (event)
+            {
+                event.preventDefault ();
+                let diffElement = event.currentTarget;
+                currentDiffElement = diffElement;
+                let destination;
+                if (diffElement.parentNode.classList.contains ('before'))
+                {
+                    destination = diffElement.closest ('tr').querySelector ('.after');
+                }
+                else if (diffElement.parentNode.classList.contains ('after'))
+                {
+                    destination = diffElement.closest ('tr').querySelector ('.before');
+                }
+                let svg = diffElement.firstChild;
+                let background = destination.querySelector ('.glyph.background');
+                let overlay = destination.querySelector ('.glyph.overlay');
+                background.classList.add ('hidden');
+                overlay.appendChild (svg.cloneNode (true));
+                overlay.classList.remove ('hidden');
+                document.addEventListener ('mouseup', hideDiff, { once: true });
+            }
+            function hideDiff (event)
+            {
+                if (currentDiffElement)
+                {
+                    event.preventDefault ();
+                    let diffElement = currentDiffElement;
+                    let destination;
+                    if (diffElement.parentNode.classList.contains ('before'))
+                    {
+                        destination = diffElement.closest ('tr').querySelector ('.after');
+                    }
+                    else if (diffElement.parentNode.classList.contains ('after'))
+                    {
+                        destination = diffElement.closest ('tr').querySelector ('.before');
+                    }
+                    let background = destination.querySelector ('.glyph.background');
+                    let overlay = destination.querySelector ('.glyph.overlay');
+                    background.classList.remove ('hidden');
+                    overlay.firstChild.remove ();
+                    overlay.classList.add ('hidden');
+                    currentDiffElement = null;
+                }
+            }
+            let befores = document.querySelectorAll ('.before .glyph.background');
+            let afters = document.querySelectorAll ('.after .glyph.background');
+            for (let index = 0; index < befores.length; index++)
+            {
+                befores[index].addEventListener ('mousedown', showDiff);
+                afters[index].addEventListener ('mousedown', showDiff);
+            }
+        </script>
+    </body>
+</html>
